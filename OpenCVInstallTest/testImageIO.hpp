@@ -18,7 +18,7 @@
 using namespace cv;
 using namespace std;
 
-std::string winName = "WebCam";
+std::string winName = "WebCamera";
 
 void displayCam(){
     // create a video capture object
@@ -28,7 +28,7 @@ void displayCam(){
         return;
     }
     
-    cv::namedWindow(winName, cv::WINDOW_AUTOSIZE);
+    cv::namedWindow(winName, cv::WINDOW_FREERATIO);
     // begin an infinite loop of acquisition of image frames from video capture object, until loop is terminated
     for(;;){
         cv::Mat frame;

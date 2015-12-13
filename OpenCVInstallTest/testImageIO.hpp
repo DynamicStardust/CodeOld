@@ -12,10 +12,13 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/videoio/videoio.hpp>
 #include <iostream>
+#include <string>
 #include <opencv2/imgcodecs.hpp>
 
 using namespace cv;
 using namespace std;
+
+std::string winName = "WebCam";
 
 void displayCam(){
     // create a video capture object
@@ -25,12 +28,12 @@ void displayCam(){
         return;
     }
     
-    cv::namedWindow("Camera", cv::WINDOW_AUTOSIZE);
+    cv::namedWindow(winName, cv::WINDOW_AUTOSIZE);
     // begin an infinite loop of acquisition of image frames from video capture object, until loop is terminated
     for(;;){
         cv::Mat frame;
         vCap >> frame;
-        cv::imshow("Camera", frame);
+        cv::imshow(winName, frame);
         if(cv::waitKey(30) >= 0){
             break;
         }
